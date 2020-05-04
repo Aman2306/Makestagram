@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="8ot-Gs-WCS">
             <objects>
                 <viewController id="Wkn-gW-kmE" sceneMemberID="viewController">
@@ -17,48 +17,48 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="3qi-rO-Jol"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="ERl-Vi-bKA"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="tab_plus_black" id="ERl-Vi-bKA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAK-HP-2VH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="206"/>
+            <point key="canvasLocation" x="0.0" y="417"/>
         </scene>
-        <!--Item-->
+        <!--Find Friends View Controller-->
         <scene sceneID="1Za-T1-JM1">
             <objects>
-                <viewController id="aVL-iG-Tbn" sceneMemberID="viewController">
+                <viewController id="aVL-iG-Tbn" customClass="FindFriendsViewController" customModule="Photogram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M9b-W5-yma">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="uuP-tW-rXZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="2P2-gA-Y9n"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="tab_find_friends_black" id="2P2-gA-Y9n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4l8-Zf-Wv5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="948"/>
+            <point key="canvasLocation" x="49" y="1166"/>
         </scene>
-        <!--Item 1-->
+        <!--Home View Controller-->
         <scene sceneID="d4G-Ne-goR">
             <objects>
-                <viewController id="ySb-8l-dsf" sceneMemberID="viewController">
+                <viewController id="ySb-8l-dsf" customClass="HomeViewController" customModule="Photogram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QZ4-Oi-INZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1BG-br-Wfz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="MwH-eg-dZa"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_home_black" id="MwH-eg-dZa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixi-e9-4Vz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="-597"/>
+            <point key="canvasLocation" x="0.0" y="-331"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="SpF-wT-BZf">
             <objects>
-                <tabBarController id="Yrs-Wf-rIn" sceneMemberID="viewController">
+                <tabBarController id="Yrs-Wf-rIn" customClass="MainTabBarController" customModule="Photogram" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MNN-G4-jri">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -75,4 +75,9 @@
             <point key="canvasLocation" x="-1399" y="418"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_find_friends_black" width="25" height="25"/>
+        <image name="tab_home_black" width="25" height="25"/>
+        <image name="tab_plus_black" width="25" height="25"/>
+    </resources>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -14,10 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
-        let initialViewController = UIStoryboard.initialViewController(for: .login)
-        window?.rootViewController = initialViewController
-        window?.makeKeyAndVisible()
+        
+        configureInitialRootViewController(for: window)
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
@@ -53,3 +52,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+
+extension SceneDelegate {
+    func configureInitialRootViewController(for window: UIWindow?) {
+        let defaults = UserDefaults.standard
+        let initialViewController: UIViewController
+
+        if let _ = Auth.auth().currentUser,
+           let userData = defaults.object(forKey: K.UserDefaults.currentUser) as? Data,
+           let user = try? JSONDecoder().decode(User.self, from: userData) {
+            User.setCurrent(user)
+            initialViewController = UIStoryboard.initialViewController(for: .main)
+        } else {
+            initialViewController = UIStoryboard.initialViewController(for: .login)
+        }
+
+        window?.rootViewController = initialViewController
+        window?.makeKeyAndVisible()
+    }
+}
