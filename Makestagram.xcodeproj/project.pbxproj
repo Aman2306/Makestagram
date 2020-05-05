@@ -25,6 +25,7 @@
 		A638F86E246093A700845F0A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A638F86D246093A700845F0A /* Post.swift */; };
 		A638F87024609BF700845F0A /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = A638F86F24609BF700845F0A /* UIImage+Size.swift */; };
 		A638F87424609CB800845F0A /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A638F87324609CB800845F0A /* StorageReference+Post.swift */; };
+		A684D90124616C0E009477E0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A684D90024616C0E009477E0 /* Home.storyboard */; };
 		A6A45E482460102C007C1B6D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A45E472460102C007C1B6D /* UserService.swift */; };
 		A6B4944F245F16F60013DF62 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B4944E245F16F60013DF62 /* Login.storyboard */; };
 		A6B49451245F17710013DF62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B49450245F17710013DF62 /* LoginViewController.swift */; };
@@ -53,6 +54,7 @@
 		A638F86D246093A700845F0A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A638F86F24609BF700845F0A /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		A638F87324609CB800845F0A /* StorageReference+Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Post.swift"; sourceTree = "<group>"; };
+		A684D90024616C0E009477E0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Home.storyboard; path = Makestagram/Storyboards/Home.storyboard; sourceTree = "<group>"; };
 		A6A45E472460102C007C1B6D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A6B4944E245F16F60013DF62 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A6B49450245F17710013DF62 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		A6323AA1245EA5B2006440F9 = {
 			isa = PBXGroup;
 			children = (
+				A684D90024616C0E009477E0 /* Home.storyboard */,
 				A6323AAC245EA5B2006440F9 /* Makestagram */,
 				A6323AAB245EA5B2006440F9 /* Products */,
 				4D92F024D5296DDE3F57F3D9 /* Pods */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6323ABA245EA5B6006440F9 /* LaunchScreen.storyboard in Resources */,
+				A684D90124616C0E009477E0 /* Home.storyboard in Resources */,
 				A6323AC2245EC2DD006440F9 /* GoogleService-Info.plist in Resources */,
 				A6323AB7245EA5B6006440F9 /* Assets.xcassets in Resources */,
 				A6B4944F245F16F60013DF62 /* Login.storyboard in Resources */,
