@@ -17,18 +17,13 @@ class User: Codable {
     let username: String
     
     // MARK:- Singleton
-    // 1
+    
     private static var _current: User?
     
-    
-    // 2
     static var current: User {
-        // 3
         guard let currentUser = _current else {
             fatalError("User doesn't exist")
         }
-        
-        // 4
         return currentUser
     }
 

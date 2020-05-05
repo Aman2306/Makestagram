@@ -17,5 +17,9 @@ struct K {
     struct UserDefaults {
         static let currentUser = "currentUser"
     }
+    
+    struct TableView {
+        static let reuseID = "PostImageCell"
+    }
 }
     

@@ -62,6 +62,7 @@ extension SceneDelegate {
            let userData = defaults.object(forKey: K.UserDefaults.currentUser) as? Data,
            let user = try? JSONDecoder().decode(User.self, from: userData) {
             User.setCurrent(user)
+            print(user.username)
             initialViewController = UIStoryboard.initialViewController(for: .main)
         } else {
             initialViewController = UIStoryboard.initialViewController(for: .login)

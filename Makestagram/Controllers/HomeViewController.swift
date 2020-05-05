@@ -12,19 +12,35 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        UserService.posts(for: User.current) { (posts) in
+            self.posts = posts
+            self.tableView.reloadData()
+        }
     }
     
+    // MARK:- Properties
+    
+    var posts = [Post]()
+    
+    
+    // MARK:- IBOutlets
+    
+    @IBOutlet var tableView: UITableView!
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.TableView.reuseID, for: indexPath)
+        
+        cell.backgroundColor = .cyan
+        
+        return cell
+    }
+    
+    
 }
