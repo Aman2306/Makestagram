@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PostActionCellDelegate: class {
+    func didTapLikeButton(_ likeButton: UIButton, on cell: PostActionCell)
+}
+
 class PostActionCell: UITableViewCell {
 
     override func awakeFromNib() {
@@ -21,7 +25,7 @@ class PostActionCell: UITableViewCell {
     // MARK:- Properties
     
     static let cellHeight: CGFloat = 46
-    
+    weak var delegate: PostActionCellDelegate?
 
     // MARK:- IBOutlets
     
@@ -33,6 +37,6 @@ class PostActionCell: UITableViewCell {
     // MARK:- IBActions
     
     @IBAction func likeButtonTapped(_ sender: UIButton) {
-        print("like button tapped")
+        delegate?.didTapLikeButton(sender, on: self)
     }
 }

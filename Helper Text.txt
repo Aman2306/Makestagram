@@ -1,0 +1,46 @@
+1. WHAT IS A TRANSACTION BLOCK?
+
+One problem with multiple users using the app at the same time is handling multiple users writing different data to the database at the same time. For example, imagine the following scenario:
+
+User 1 and 2 both open the app and see post A in their timeline
+For both users, post A has 5 likes
+User 1 and 2 both like post A at the exact same time
+What do you think will happen? What do we want to happen?
+
+Without transaction blocks, the like count will be incremented by one when it should be incremented by 2. Both User 1 and 2 will write the database to have a like count of 6. Do you see our problem? Our like count should be 7, but instead is 6. Here, we say our data has been corrupted.
+
+Transaction operation solve this problem for us by making sure only one user can update the value at a time. In addition, it'll handle incrementing the current value without losing data written by other users.
+
+In the situation above, it would handle requests from User A and B one at a time. The first request would update the like count of post A from 5 to 6. The second would update the value from 6 to 7. Just what we wanted!
+
+When to use Transactions
+The most common us case for using transaction operations is for properties that can't be corrupted by multiple writes happening at the same time. This is great for counters, balances, and other number values.
+
+2. Using Transaction Blocks
+
+Let's look at a sample use of the Firebase transaction API:
+
+// 1
+ref.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+    // 2 increment value
+    let currentValue = currentData.value as? Int ?? 0
+    currentData.value = currentValue + 1
+
+    // 3
+    return TransactionResult.success(withValue: currentData)
+}, andCompletionBlock: { (error: Error?, committed: Bool, snapshot: DataSnapshot?) in
+    // 4
+    if let error = error {
+        // handle error
+    }
+
+    // 5 handle success
+})
+We implement a transaction with the following steps:
+
+Call the transaction API on the DatabaseReference location we want to update
+Check that the value exists and increment it if it does
+Return the updated value
+Handle the completion block if there's an error
+Handle the completion block if the transaction was successful
+Transaction operations are an important tool provided by Firebase to help developer solve specific problems around maintaining data integrity. Now that you know what they're used for and how to use them, you can build more complex data structures and apps.
